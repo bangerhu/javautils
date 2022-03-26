@@ -1,0 +1,14 @@
+dontinline,*.*_all_jmhStub
+dontinline,*.*_avgt_jmhStub
+dontinline,*.*_sample_jmhStub
+dontinline,*.*_ss_jmhStub
+dontinline,*.*_thrpt_jmhStub
+inline,com/hujiya/jmh/AlibabaAtomicTest.atomicTest
+inline,com/hujiya/jmh/AlibabaAtomicTest.longAdderTest
+inline,com/hujiya/jmh/CounterBenchmark.getAdder
+inline,com/hujiya/jmh/CounterBenchmark.incAdder
+inline,com/hujiya/jmh/Helloworld.m
+inline,com/hujiya/jmh/JmhHello.stringAdd
+inline,com/hujiya/jmh/JmhHello.stringBuilderAppend
+inline,com/hujiya/jmh/SimpleBenchmark.bench
+inline,com/hujiya/jmh/SimpleBenchmark.stringConcat

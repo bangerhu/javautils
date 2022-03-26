@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<configuration>
+    <springProperty name="serverName" source="server.name"/>
+    <springProperty name="serverPort" source="server.port"/>
+    <springProperty name="logPath" source="logfile.path"/>
+
+    <!--自定义属性-->
+    <property name="totalSizeCap" value="20GB"/>
+    <property name="maxFileSize" value="256MB"/>
+    <property name="maxHistory" value="10"/>
+
+    <!--日志输出到控制台规则 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d[%level]%c{100}.%M:%L%m%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="dev">
+        <root level="info">
+            <appender-ref ref="console"/>
+        </root>
+    </springProfile>
+
+    <logger name="com" level="DEBUG"/>
+
+</configuration>

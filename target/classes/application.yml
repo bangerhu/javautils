@@ -1,0 +1,63 @@
+# == 设置所有产品的公共配置 ==
+spring:
+  profiles:
+    active: dev
+
+  cloud:
+    gateway:
+      routes:
+        - id: baidu_route
+          uri: https://www.baidu.com
+          predicates:
+            - Query=url, baidu.
+        - id: qq_route
+          uri: https://www.qq.com
+          predicates:
+            - Query=url, qq.
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+  #    password: ivay_redis_test
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+      username: root
+      password: root
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
+debug: false
+
+# 日志配置
+logging:
+  config: classpath:logback-spring.xml
+
+
+server:
+  port: 8080
+  name: testcode
+
+# 日志配置
+logfile:
+  path: D://Users/vivian/data
+
+###通过下面的配置启用所有的监控端点，默认情况下，这些端点是禁用的；
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+feign:
+  sentinel:
+    enabled: true
+  okhttp:
+    enabled: true
