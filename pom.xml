@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hujiya</groupId>
-    <artifactId>javautile.code</artifactId>
+    <artifactId>javautils</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <!-- 继承说明：继承SpringBoot提供的父工程 -->
